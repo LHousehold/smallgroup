@@ -9,17 +9,9 @@ class Leader(models.Model):
 
     name = models.CharField(max_length=64)
     email = models.EmailField()
-    gender = models.Field(max_length=12, choices=genders)
+    gender = models.CharField(max_length=12, choices=genders, default='Male')
+    picture = models.ImageField(upload_to="images/", default="images/blank_avatar.jpg")
 
     def __str__(self):
         return self.name
-
-
-
-class Picture(models.Model):
-    leader = models.ForeignKey(Leader)
-    filepath = models.ImageField()
-
-    def __str__(self):
-        return self.leader
 

@@ -16,17 +16,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=64)),
                 ('email', models.EmailField(max_length=254)),
-                ('gender', models.CharField(max_length=12)),
-            ],
-            options=None,
-            bases=None,
-        ),
-        migrations.CreateModel(
-            name='Picture',
-            fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('filepath', models.ImageField(upload_to=b'')),
-                ('leader', models.ForeignKey(to='leaders.Leader')),
+                ('picture', models.ImageField(default=b'/leaders/static/images/blank_avatar.jpg', upload_to=b'')),
             ],
             options=None,
             bases=None,

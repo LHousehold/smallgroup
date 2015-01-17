@@ -40,7 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'leaders'
+    'groups'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -88,6 +88,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = '/home/luke/Documents/smallgroup/media/'
+MEDIA_ROOT = '/home/luke/Documents/smallgroup/smallgroup/media/'
 
 MEDIA_URL = '/media/'

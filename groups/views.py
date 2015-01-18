@@ -11,3 +11,8 @@ def index(request):
   context = RequestContext(request, {})
 
   return HttpResponse(template.render(context))
+
+def groups(request):
+  group_type = request.GET.get('t','c')
+
+  return HttpResponse("group type: " + group_type);

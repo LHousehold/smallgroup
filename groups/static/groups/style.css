@@ -1,6 +1,24 @@
-.grey {
-  width: 400px;
-  height: 300px;
-  background: grey;
-  color: white;
+.karla {
+  font-family: 'Karla', sans-serif;
+}
+
+.content {
+  background-color: #F0FFFF;
+  height: 100vh;
+}
+
+.welcome {
+  margin-top: 30vh;
+}
+
+.grouptypes {
+  padding: 40px 64px;
+}
+
+.grouptypes > div > input {
+  margin: 24px 0px;
+}
+
+#central_campus {
+  font-size: 40px;
 }

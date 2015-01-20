@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext, loader
 
-from models import Leader
+from models import Group
 
 # Create your views here.
 
@@ -15,4 +15,22 @@ def index(request):
 def groups(request):
   group_type = request.GET.get('t','c')
 
-  return HttpResponse("group type: " + group_type);
+  #retrieve dictionary of lists of groups based on days
+  if group_type == 'm':
+    group_type = 'Men'
+  elif group_type == 'w':
+    group_type = 'Women'
+  else:
+    group_type = 'Couples'
+
+  #groups = Group.objects.filter(group_type = group_type)
+
+  days = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
+  groups = {}
+  for day in days:
+    groups[day] = Group.objects.filter(group_type=group_type, day=day)
+
+  template = loader.get_template('groups/groups.html')
+  context = RequestContext(request, {"groups": groups})
+
+  return HttpResponse(template.render(context))

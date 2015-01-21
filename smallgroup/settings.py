@@ -114,3 +114,10 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = '/home/luke/Documents/smallgroup/smallgroup/media/'
 
 MEDIA_URL = '/media/'
+
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'connect.central.ctf@gmail.com'
+EMAIL_HOST_PASSWORD = '89bathurst'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

@@ -9,4 +9,5 @@ urlpatterns = patterns('',
     url(r'^groups/$', views.groups),
     url(r'^signup/$', views.signup),
     url(r'^thankyou/$', views.thankyou),
+    url(r'^contact/$', views.contact),
     ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

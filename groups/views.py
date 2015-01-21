@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext, loader, Context, Template
+from django.core.mail import send_mail
 
 from models import Group
 
@@ -36,13 +37,12 @@ def groups(request):
 
   template = loader.get_template('groups/groups.html')
   context = RequestContext(request, {"groups": groups})
-  #template = Template(loader.get_template('groups/groups.html')
-  #context = Context({"groups": groups})
 
   return HttpResponse(template.render(context))
 
 def signup(request):
   group_id = request.GET.get('id','c')
+
 
   group = Group.objects.get(id=group_id)
 
@@ -56,3 +56,37 @@ def thankyou(request):
   context = RequestContext(request, {})
 
   return HttpResponse(template.render(context))
+
+def contact(request):
+  group_id = request.GET.get('id','c')
+  group = Group.objects.get(id=group_id)
+  name = request.GET.get('name','c')
+  email = request.GET.get('email','c')
+  topic = "Smallgroup Signup from " + name
+  leader_emails = []
+  leader_emails.append(group.leader.email)
+  if group.leader2:
+    leader_emails.append(group.leader2.email)
+
+  message = '''
+  Hey there!
+
+  You have a new signup request for your group!
+
+  Details are below:
+
+  Name: %s
+  Email: %s
+
+  Group: %s
+
+  I'm chuffed to bits to help you with your connection today!
+  ''' %(name,email,group.name)
+  send_mail(topic, message, 'connect.central.ctf@gmail.com', leader_emails)
+  return HttpResponse("0")
+
+
+
+
+
+

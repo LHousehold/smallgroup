@@ -9,11 +9,22 @@ $(document).ready(function() {
 
   $("#submit_signup_form").click(function() {
     //attempt to send email, probably with some kind of ajax thing...
-    //
-
-    // redirect to thank you page if successful
     var origin =  window.location.origin;
-    window.location = origin + "/thankyou"
+    var src = event.target;
+    var group_id = src.getAttribute("data-group_id");
+    var email = document.getElementById("input_name").value;
+    var name = document.getElementById("input_email").value;
+
+    var x = $.get( "/contact/", {"id":group_id,"email":email,"name":name})
+    .done(function() {
+      window.location = origin + "/thankyou";
+    })
+    .fail(function() {
+      alert( "error: Submission failed; please let us know at church next week!" );
+      console.log("x: " + x.responseText)
+    })
+    .always(function() {
+    })
   })
 
   $(".group_sign_up_btn").click(function() {

@@ -24,8 +24,6 @@ def groups(request):
   else:
     group_type = 'Couples'
 
-  #groups = Group.objects.filter(group_type = group_type)
-
   days = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
   groups = {}
   for day in days:
@@ -42,8 +40,6 @@ def groups(request):
 
 def signup(request):
   group_id = request.GET.get('id','c')
-
-
   group = Group.objects.get(id=group_id)
 
   template = loader.get_template('groups/signup.html')
@@ -82,7 +78,9 @@ def contact(request):
 
   I'm chuffed to bits to help you with your connection today!
   ''' %(name,email,group.name)
+
   send_mail(topic, message, 'connect.central.ctf@gmail.com', leader_emails)
+
   return HttpResponse("0")
 
 

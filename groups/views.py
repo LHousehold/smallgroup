@@ -40,3 +40,19 @@ def groups(request):
   #context = Context({"groups": groups})
 
   return HttpResponse(template.render(context))
+
+def signup(request):
+  group_id = request.GET.get('id','c')
+
+  group = Group.objects.get(id=group_id)
+
+  template = loader.get_template('groups/signup.html')
+  context = RequestContext(request, {"group": group})
+
+  return HttpResponse(template.render(context))
+
+def thankyou(request):
+  template = loader.get_template('groups/thankyou.html')
+  context = RequestContext(request, {})
+
+  return HttpResponse(template.render(context))

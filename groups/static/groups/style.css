@@ -76,11 +76,11 @@
   margin: 10px 0px;
 }
 
-.group_info > h3 {
-  //display: inline-block;
-  //margin-right: 24px;
+.signup_welcome {
+  margin-top: 20vh;
+  margin-bottom: 40px;
 }
 
-.group_info > input {
-  //margin-bottom: 8px;
+.signup_form .form-group {
+  margin-bottom: 25px !important;
 }

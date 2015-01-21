@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from django.template import RequestContext, loader
+from django.template import RequestContext, loader, Context, Template
 
 from models import Group
 
@@ -36,5 +36,7 @@ def groups(request):
 
   template = loader.get_template('groups/groups.html')
   context = RequestContext(request, {"groups": groups})
+  #template = Template(loader.get_template('groups/groups.html')
+  #context = Context({"groups": groups})
 
   return HttpResponse(template.render(context))

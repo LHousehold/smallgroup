@@ -39,100 +39,189 @@
       </nav>
       <div id="mon" class="row group_day">
         <h2 class="karla group_day_title">Monday Groups</h1>
-
         {% for group in groups.Mon %}
         <div class="smallgroup">
-
-          <div class="group_info">
-            <h3>{{ group.name }}</h3>
-            <dl>
-              <dt>Leader<dt><dd>{{ group.leader.name }}</dd>
-              <dt>Email<dt><dd>{{ group.leader.email }}</dd>
-            </dl>
+          <div class="group_info container">
+            <h3 class="karla">{{ group.name }}</h3>
+            <input type="button" value="Sign Up" class="btn btn-default"/>
+            <div class="row">
+              <div class="col-md-4 col-sm-3 info">
+                <table>
+                  <tr><td>Type</td><td>{{ group.group_type }}</td></tr>
+                  {% if group.leader2 %}
+                  <tr><td>Co-Leader</td><td>{{ group.leader.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
+                  <tr><td>Co-Leader</td><td>{{ group.leader2.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader2.email }}</td></tr>
+                  {% else %}
+                  <tr><td>Leader</td><td>{{ group.leader.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
+                  {% endif %}
+                  <tr><td>Time</td><td>{{ group.time }}</td></tr>
+                  <tr><td>Location</td><td>{{ group.location }}</td></tr>
+                  <tr><td>Address</td><td>{{ group.address }}</td></tr>
+                </table>
+              </div>
+              <div class="col-md-8 col-sm-9 description">
+                <p>{{ group.description }}</p>
+              </div>
+            </div>
           </div>
         </div>
         {% endfor %}
       </div>
       <div id="tue" class="row group_day">
         <h2 class="karla group_day_title">Tuesday Groups</h2>
-
         {% for group in groups.Tue %}
         <div class="smallgroup">
-
-          <div class="group_info">
-            <h3>{{ group.name }}</h3>
-            <p><span class="label label-info">Leader</span><span>{{ group.leader.name }}</span></p>
-            <p><span class="label label-info">Email</span><span>{{ group.leader.email }}</span></p>
+          <div class="group_info container">
+            <h3 class="karla">{{ group.name }}</h3>
+            <input type="button" value="Sign Up" class="btn btn-default"/>
+            <div class="row">
+              <div class="col-md-4 col-sm-3 info">
+                <table>
+                  <tr><td>Type</td><td>{{ group.group_type }}</td></tr>
+                  <tr><td>Leader</td><td>{{ group.leader.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
+                  <tr><td>Time</td><td>{{ group.time }}</td></tr>
+                  <tr><td>Location</td><td>{{ group.location }}</td></tr>
+                  <tr><td>Address</td><td>{{ group.address }}</td></tr>
+                </table>
+              </div>
+              <div class="col-md-8 col-sm-9 description">
+                <p>{{ group.description }}</p>
+              </div>
+            </div>
           </div>
         </div>
         {% endfor %}
       </div>
       <div id="wed" class="row group_day">
         <h2 class="karla group_day_title">Wednesday Groups</h2>
-
         {% for group in groups.Wed %}
         <div class="smallgroup">
-
-          <div class="group_info">
-            <h3>{{ group.name }}</h3>
-            <p><span class="label label-info">Leader</span><span>{{ group.leader.name }}</span></p>
-            <p><span class="label label-info">Email</span><span>{{ group.leader.email }}</span></p>
+          <div class="group_info container">
+            <h3 class="karla">{{ group.name }}</h3>
+            <input type="button" value="Sign Up" class="btn btn-default"/>
+            <div class="row">
+              <div class="col-md-4 col-sm-3 info">
+                <table>
+                  <tr><td>Type</td><td>{{ group.group_type }}</td></tr>
+                  <tr><td>Leader</td><td>{{ group.leader.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
+                  <tr><td>Time</td><td>{{ group.time }}</td></tr>
+                  <tr><td>Location</td><td>{{ group.location }}</td></tr>
+                  <tr><td>Address</td><td>{{ group.address }}</td></tr>
+                </table>
+              </div>
+              <div class="col-md-8 col-sm-9 description">
+                <p>{{ group.description }}</p>
+              </div>
+            </div>
           </div>
         </div>
         {% endfor %}
       </div>
       <div id="thu" class="row group_day">
         <h2 class="karla group_day_title">Thursday Groups</h2>
-
         {% for group in groups.Thu %}
         <div class="smallgroup">
-
-          <div class="group_info">
-            <h3>{{ group.name }}</h3>
-            <p><span class="label label-info">Leader</span><span>{{ group.leader.name }}</span></p>
-            <p><span class="label label-info">Email</span><span>{{ group.leader.email }}</span></p>
+          <div class="group_info container">
+            <h3 class="karla">{{ group.name }}</h3>
+            <input type="button" value="Sign Up" class="btn btn-default"/>
+            <div class="row">
+              <div class="col-md-4 col-sm-3 info">
+                <table>
+                  <tr><td>Type</td><td>{{ group.group_type }}</td></tr>
+                  <tr><td>Leader</td><td>{{ group.leader.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
+                  <tr><td>Time</td><td>{{ group.time }}</td></tr>
+                  <tr><td>Location</td><td>{{ group.location }}</td></tr>
+                  <tr><td>Address</td><td>{{ group.address }}</td></tr>
+                </table>
+              </div>
+              <div class="col-md-8 col-sm-9 description">
+                <p>{{ group.description }}</p>
+              </div>
+            </div>
           </div>
         </div>
         {% endfor %}
       </div>
       <div id="fri" class="row group_day">
         <h2 class="karla group_day_title">Friday Groups</h2>
-
         {% for group in groups.Fri %}
         <div class="smallgroup">
-
-          <div class="group_info">
-            <h3>{{ group.name }}</h3>
-            <p><span class="label label-info">Leader</span><span>{{ group.leader.name }}</span></p>
-            <p><span class="label label-info">Email</span><span>{{ group.leader.email }}</span></p>
+          <div class="group_info container">
+            <h3 class="karla">{{ group.name }}</h3>
+            <input type="button" value="Sign Up" class="btn btn-default"/>
+            <div class="row">
+              <div class="col-md-4 col-sm-3 info">
+                <table>
+                  <tr><td>Type</td><td>{{ group.group_type }}</td></tr>
+                  <tr><td>Leader</td><td>{{ group.leader.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
+                  <tr><td>Time</td><td>{{ group.time }}</td></tr>
+                  <tr><td>Location</td><td>{{ group.location }}</td></tr>
+                  <tr><td>Address</td><td>{{ group.address }}</td></tr>
+                </table>
+              </div>
+              <div class="col-md-8 col-sm-9 description">
+                <p>{{ group.description }}</p>
+              </div>
+            </div>
           </div>
         </div>
         {% endfor %}
       </div>
       <div id="sat" class="row group_day">
         <h2 class="karla group_day_title">Saturday Groups</h2>
-
         {% for group in groups.Sat %}
         <div class="smallgroup">
-
-          <div class="group_info">
-            <h3>{{ group.name }}</h3>
-            <p><span class="label label-info">Leader</span><span>{{ group.leader.name }}</span></p>
-            <p><span class="label label-info">Email</span><span>{{ group.leader.email }}</span></p>
+          <div class="group_info container">
+            <h3 class="karla">{{ group.name }}</h3>
+            <input type="button" value="Sign Up" class="btn btn-default"/>
+            <div class="row">
+              <div class="col-md-4 col-sm-3 info">
+                <table>
+                  <tr><td>Type</td><td>{{ group.group_type }}</td></tr>
+                  <tr><td>Leader</td><td>{{ group.leader.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
+                  <tr><td>Time</td><td>{{ group.time }}</td></tr>
+                  <tr><td>Location</td><td>{{ group.location }}</td></tr>
+                  <tr><td>Address</td><td>{{ group.address }}</td></tr>
+                </table>
+              </div>
+              <div class="col-md-8 col-sm-9 description">
+                <p>{{ group.description }}</p>
+              </div>
+            </div>
           </div>
         </div>
         {% endfor %}
       </div>
       <div id="sun" class="row group_day">
         <h2 class="karla group_day_title">Sunday Groups</h2>
-
         {% for group in groups.Sun %}
         <div class="smallgroup">
-
-          <div class="group_info">
-            <h3>{{ group.name }}</h3>
-            <p><span class="label label-info">Leader</span><span>{{ group.leader.name }}</span></p>
-            <p><span class="label label-info">Email</span><span>{{ group.leader.email }}</span></p>
+          <div class="group_info container">
+            <h3 class="karla">{{ group.name }}</h3>
+            <input type="button" value="Sign Up" class="btn btn-default"/>
+            <div class="row">
+              <div class="col-md-4 col-sm-3 info">
+                <table>
+                  <tr><td>Type</td><td>{{ group.group_type }}</td></tr>
+                  <tr><td>Leader</td><td>{{ group.leader.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
+                  <tr><td>Time</td><td>{{ group.time }}</td></tr>
+                  <tr><td>Location</td><td>{{ group.location }}</td></tr>
+                  <tr><td>Address</td><td>{{ group.address }}</td></tr>
+                </table>
+              </div>
+              <div class="col-md-8 col-sm-9 description">
+                <p>{{ group.description }}</p>
+              </div>
+            </div>
           </div>
         </div>
         {% endfor %}

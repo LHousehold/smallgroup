@@ -12,8 +12,8 @@ $(document).ready(function() {
     var origin =  window.location.origin;
     var src = event.target;
     var group_id = src.getAttribute("data-group_id");
-    var email = document.getElementById("input_name").value;
-    var name = document.getElementById("input_email").value;
+    var name = document.getElementById("input_name").value;
+    var email = document.getElementById("input_email").value;
 
     var x = $.get( "/contact/", {"id":group_id,"email":email,"name":name})
     .done(function() {

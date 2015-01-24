@@ -38,16 +38,31 @@
         </div>
       </nav>
       <div id="mon" class="row group_day">
-        <h2 class="karla group_day_title">Monday Groups</h1>
+        <h2 class="karla group_day_title">Monday Groups</h2>
+        {% if groups.Mon|length == 0 %}
+        <div class="smallgroup">
+          <div class="group_info container-fluid">
+            <h4 class="karla">No Groups on this Day</h4>
+          </div>
+        </div>
+        {% endif %}
         {% for group in groups.Mon %}
         <div class="smallgroup">
           <div class="group_info container-fluid">
             <h3 class="karla">{{ group.name }}</h3>
             <input type="button" data-group_id={{ group.id }} value="Sign Up" class="group_sign_up_btn btn btn-default"/>
             <div class="row">
+              <div class="col-md-3 col-sm-3">
+                <a href="#" class="thumbnail">
+                  <img src="/media/{{ group.leader.picture }}" class="leader_thumbnail">
+                </a>
+              </div>
               <div class="col-md-4 col-sm-3 info">
                 <table>
                   <tr><td>Type</td><td>{{ group.group_type }}</td></tr>
+                  {% if group.book %}
+                  <tr><td>Book</td><td>{{ group.book }}</td></tr>
+                  {% endif %}
                   {% if group.leader2 %}
                   <tr><td>Co-Leader</td><td>{{ group.leader.name }}</td></tr>
                   <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
@@ -58,11 +73,13 @@
                   <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
                   {% endif %}
                   <tr><td>Time</td><td>{{ group.time }}</td></tr>
+                  {% if group.location %}
                   <tr><td>Location</td><td>{{ group.location }}</td></tr>
+                  {% endif %}
                   <tr><td>Address</td><td>{{ group.address }}</td></tr>
                 </table>
               </div>
-              <div class="col-md-8 col-sm-9 description">
+              <div class="col-md-5 col-sm-6 description">
                 <p>{{ group.description }}</p>
               </div>
             </div>
@@ -72,6 +89,13 @@
       </div>
       <div id="tue" class="row group_day">
         <h2 class="karla group_day_title">Tuesday Groups</h2>
+        {% if groups.Tue|length == 0 %}
+        <div class="smallgroup">
+          <div class="group_info container-fluid">
+            <h4 class="karla">No Groups on this Day</h4>
+          </div>
+        </div>
+        {% endif %}
         {% for group in groups.Tue %}
         <div class="smallgroup">
           <div class="group_info container-fluid">
@@ -81,10 +105,22 @@
               <div class="col-md-4 col-sm-3 info">
                 <table>
                   <tr><td>Type</td><td>{{ group.group_type }}</td></tr>
+                  {% if group.book %}
+                  <tr><td>Book</td><td>{{ group.book }}</td></tr>
+                  {% endif %}
+                  {% if group.leader2 %}
+                  <tr><td>Co-Leader</td><td>{{ group.leader.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
+                  <tr><td>Co-Leader</td><td>{{ group.leader2.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader2.email }}</td></tr>
+                  {% else %}
                   <tr><td>Leader</td><td>{{ group.leader.name }}</td></tr>
                   <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
+                  {% endif %}
                   <tr><td>Time</td><td>{{ group.time }}</td></tr>
+                  {% if group.location %}
                   <tr><td>Location</td><td>{{ group.location }}</td></tr>
+                  {% endif %}
                   <tr><td>Address</td><td>{{ group.address }}</td></tr>
                 </table>
               </div>
@@ -98,6 +134,13 @@
       </div>
       <div id="wed" class="row group_day">
         <h2 class="karla group_day_title">Wednesday Groups</h2>
+        {% if groups.Wed|length == 0 %}
+        <div class="smallgroup">
+          <div class="group_info container-fluid">
+            <h4 class="karla">No Groups on this Day</h4>
+          </div>
+        </div>
+        {% endif %}
         {% for group in groups.Wed %}
         <div class="smallgroup">
           <div class="group_info container-fluid">
@@ -107,10 +150,22 @@
               <div class="col-md-4 col-sm-3 info">
                 <table>
                   <tr><td>Type</td><td>{{ group.group_type }}</td></tr>
+                  {% if group.book %}
+                  <tr><td>Book</td><td>{{ group.book }}</td></tr>
+                  {% endif %}
+                  {% if group.leader2 %}
+                  <tr><td>Co-Leader</td><td>{{ group.leader.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
+                  <tr><td>Co-Leader</td><td>{{ group.leader2.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader2.email }}</td></tr>
+                  {% else %}
                   <tr><td>Leader</td><td>{{ group.leader.name }}</td></tr>
                   <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
+                  {% endif %}
                   <tr><td>Time</td><td>{{ group.time }}</td></tr>
+                  {% if group.location %}
                   <tr><td>Location</td><td>{{ group.location }}</td></tr>
+                  {% endif %}
                   <tr><td>Address</td><td>{{ group.address }}</td></tr>
                 </table>
               </div>
@@ -124,6 +179,13 @@
       </div>
       <div id="thu" class="row group_day">
         <h2 class="karla group_day_title">Thursday Groups</h2>
+        {% if groups.Thu|length == 0 %}
+        <div class="smallgroup">
+          <div class="group_info container-fluid">
+            <h4 class="karla">No Groups on this Day</h4>
+          </div>
+        </div>
+        {% endif %}
         {% for group in groups.Thu %}
         <div class="smallgroup">
           <div class="group_info container-fluid">
@@ -133,10 +195,22 @@
               <div class="col-md-4 col-sm-3 info">
                 <table>
                   <tr><td>Type</td><td>{{ group.group_type }}</td></tr>
+                  {% if group.book %}
+                  <tr><td>Book</td><td>{{ group.book }}</td></tr>
+                  {% endif %}
+                  {% if group.leader2 %}
+                  <tr><td>Co-Leader</td><td>{{ group.leader.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
+                  <tr><td>Co-Leader</td><td>{{ group.leader2.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader2.email }}</td></tr>
+                  {% else %}
                   <tr><td>Leader</td><td>{{ group.leader.name }}</td></tr>
                   <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
+                  {% endif %}
                   <tr><td>Time</td><td>{{ group.time }}</td></tr>
+                  {% if group.location %}
                   <tr><td>Location</td><td>{{ group.location }}</td></tr>
+                  {% endif %}
                   <tr><td>Address</td><td>{{ group.address }}</td></tr>
                 </table>
               </div>
@@ -150,6 +224,13 @@
       </div>
       <div id="fri" class="row group_day">
         <h2 class="karla group_day_title">Friday Groups</h2>
+        {% if groups.Fri|length == 0 %}
+        <div class="smallgroup">
+          <div class="group_info container-fluid">
+            <h4 class="karla">No Groups on this Day</h4>
+          </div>
+        </div>
+        {% endif %}
         {% for group in groups.Fri %}
         <div class="smallgroup">
           <div class="group_info container-fluid">
@@ -159,10 +240,22 @@
               <div class="col-md-4 col-sm-3 info">
                 <table>
                   <tr><td>Type</td><td>{{ group.group_type }}</td></tr>
+                  {% if group.book %}
+                  <tr><td>Book</td><td>{{ group.book }}</td></tr>
+                  {% endif %}
+                  {% if group.leader2 %}
+                  <tr><td>Co-Leader</td><td>{{ group.leader.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
+                  <tr><td>Co-Leader</td><td>{{ group.leader2.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader2.email }}</td></tr>
+                  {% else %}
                   <tr><td>Leader</td><td>{{ group.leader.name }}</td></tr>
                   <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
+                  {% endif %}
                   <tr><td>Time</td><td>{{ group.time }}</td></tr>
+                  {% if group.location %}
                   <tr><td>Location</td><td>{{ group.location }}</td></tr>
+                  {% endif %}
                   <tr><td>Address</td><td>{{ group.address }}</td></tr>
                 </table>
               </div>
@@ -176,6 +269,13 @@
       </div>
       <div id="sat" class="row group_day">
         <h2 class="karla group_day_title">Saturday Groups</h2>
+        {% if groups.Sat|length == 0 %}
+        <div class="smallgroup">
+          <div class="group_info container-fluid">
+            <h4 class="karla">No Groups on this Day</h4>
+          </div>
+        </div>
+        {% endif %}
         {% for group in groups.Sat %}
         <div class="smallgroup">
           <div class="group_info container-fluid">
@@ -185,10 +285,22 @@
               <div class="col-md-4 col-sm-3 info">
                 <table>
                   <tr><td>Type</td><td>{{ group.group_type }}</td></tr>
+                  {% if group.book %}
+                  <tr><td>Book</td><td>{{ group.book }}</td></tr>
+                  {% endif %}
+                  {% if group.leader2 %}
+                  <tr><td>Co-Leader</td><td>{{ group.leader.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
+                  <tr><td>Co-Leader</td><td>{{ group.leader2.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader2.email }}</td></tr>
+                  {% else %}
                   <tr><td>Leader</td><td>{{ group.leader.name }}</td></tr>
                   <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
+                  {% endif %}
                   <tr><td>Time</td><td>{{ group.time }}</td></tr>
+                  {% if group.location %}
                   <tr><td>Location</td><td>{{ group.location }}</td></tr>
+                  {% endif %}
                   <tr><td>Address</td><td>{{ group.address }}</td></tr>
                 </table>
               </div>
@@ -202,6 +314,13 @@
       </div>
       <div id="sun" class="row group_day">
         <h2 class="karla group_day_title">Sunday Groups</h2>
+        {% if groups.Sun|length == 0 %}
+        <div class="smallgroup">
+          <div class="group_info container-fluid">
+            <h4 class="karla">No Groups on this Day</h4>
+          </div>
+        </div>
+        {% endif %}
         {% for group in groups.Sun %}
         <div class="smallgroup">
           <div class="group_info container-fluid">
@@ -211,10 +330,22 @@
               <div class="col-md-4 col-sm-3 info">
                 <table>
                   <tr><td>Type</td><td>{{ group.group_type }}</td></tr>
+                  {% if group.book %}
+                  <tr><td>Book</td><td>{{ group.book }}</td></tr>
+                  {% endif %}
+                  {% if group.leader2 %}
+                  <tr><td>Co-Leader</td><td>{{ group.leader.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
+                  <tr><td>Co-Leader</td><td>{{ group.leader2.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader2.email }}</td></tr>
+                  {% else %}
                   <tr><td>Leader</td><td>{{ group.leader.name }}</td></tr>
                   <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
+                  {% endif %}
                   <tr><td>Time</td><td>{{ group.time }}</td></tr>
+                  {% if group.location %}
                   <tr><td>Location</td><td>{{ group.location }}</td></tr>
+                  {% endif %}
                   <tr><td>Address</td><td>{{ group.address }}</td></tr>
                 </table>
               </div>

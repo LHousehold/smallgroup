@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="/static/groups/style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="/static/groups/script.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Muli|Montserrat|Maven+Pro|Karla' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+    <div class="content container">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand karla" href="#mon">Small Groups by Day</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active nav_day"><a href="#Mon">Monday</a></li>
+              <li><a href="#Tue" class="nav_day">Tuesday</a></li>
+              <li><a href="#Wed" class="nav_day">Wednesday</a></li>
+              <li><a href="#Thu" class="nav_day">Thursday</a></li>
+              <li><a href="#Fri" class="nav_day">Friday</a></li>
+              <li><a href="#Sat" class="nav_day">Saturday</a></li>
+              <li><a href="#Sun" class="nav_day">Sunday</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      {% for day in days %}
+      {{ day }}
+      <div id={{ day }} class="row group_day">
+        <h2 class="karla group_day_title">{{ days.day }} Groups</h1>
+        {% for group in groups.day %}
+        <div class="smallgroup">
+          <div class="group_info container-fluid">
+            <h3 class="karla">{{ group.name }}</h3>
+            <input type="button" data-group_id={{ group.id }} value="Sign Up" class="group_sign_up_btn btn btn-default"/>
+            <div class="row">
+              <div class="col-md-4 col-sm-3 info">
+                <table>
+                  <tr><td>Type</td><td>{{ group.group_type }}</td></tr>
+                  {% if group.leader2 %}
+                  <tr><td>Co-Leader</td><td>{{ group.leader.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
+                  <tr><td>Co-Leader</td><td>{{ group.leader2.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader2.email }}</td></tr>
+                  {% else %}
+                  <tr><td>Leader</td><td>{{ group.leader.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
+                  {% endif %}
+                  <tr><td>Time</td><td>{{ group.time }}</td></tr>
+                  <tr><td>Location</td><td>{{ group.location }}</td></tr>
+                  <tr><td>Address</td><td>{{ group.address }}</td></tr>
+                </table>
+              </div>
+              <div class="col-md-8 col-sm-9 description">
+                <p>{{ group.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>

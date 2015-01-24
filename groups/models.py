@@ -14,7 +14,7 @@ class Leader(models.Model):
 
 
 class Group(models.Model):
-  group_types = (('Men','Men'), ('Women','Women'), ('Couples','Couples'), ('Mixed','Mixed'))
+  group_types = (('Men','Men'), ('Women','Women'), ('Couples','Couples'), ('Co-ed','Co-ed'))
   days_of_week = (('Mon','Monday'), ('Tue','Tuesday'), ('Wed','Wednesday'),
   ('Thu','Thursday'), ('Fri','Friday'), ('Sat','Saturday'), ('Sun','Sunday'))
 
@@ -22,14 +22,15 @@ class Group(models.Model):
   leader2 = models.ForeignKey(Leader, blank="True", null="True",
   related_name="leader2_%(class)s_related")
   coordinator = models.CharField(max_length=64, blank="True", null="True")
-  name = models.CharField(max_length=64, default="New smallgroup")
+  name = models.CharField(max_length=64, default="")
   group_type = models.CharField(max_length=8, choices=group_types, default="Men")
   picture = models.ImageField(upload_to="images/", default="images/empty_room.jpg")
-  location = models.CharField(max_length="32")
+  location = models.CharField(max_length="32", null="True", blank="True")
   day = models.CharField(max_length="12", choices=days_of_week)
-  time = models.DateTimeField()
-  description = models.CharField(max_length="1280", default="smallgroup")
-  address = models.CharField(max_length="64", default="")
+  time = models.CharField(max_length="8")
+  description = models.CharField(max_length="1280", default="")
+  address = models.CharField(max_length="32", default="")
+  book = models.CharField(max_length="64", blank="True", null="True")
 
   def __str(self):
     return self.name

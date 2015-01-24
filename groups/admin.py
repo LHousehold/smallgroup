@@ -8,9 +8,9 @@ class LeaderAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'picture')
 
 class GroupAdmin(admin.ModelAdmin):
-    fields = ['name', 'leader', 'leader2', 'coordinator', 'picture', 'location',
+    fields = ['name', 'book', 'leader', 'leader2', 'coordinator', 'picture', 'location','address',
     'day', 'time', 'group_type', 'description']
-    list_display = ('name', 'leader', 'leader2', 'coordinator', 'picture', 'location',
+    list_display = ('name', 'book', 'leader', 'leader2', 'coordinator', 'picture', 'location','address',
     'day', 'time', 'group_type', 'description')
 
 admin.site.register(Leader, LeaderAdmin)

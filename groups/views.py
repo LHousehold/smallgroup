@@ -29,7 +29,7 @@ def groups(request):
   for day in days:
     if group_type == 'Women' or group_type == 'Men':
       groups[day] = Group.objects.filter(group_type=group_type,
-      day=day) | Group.objects.filter(group_type="Mixed", day=day)
+      day=day) | Group.objects.filter(group_type="Co-ed", day=day)
     else:
       groups[day] = Group.objects.filter(group_type=group_type, day=day)
 

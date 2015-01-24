@@ -12,7 +12,7 @@
 }
 
 .content {
-  background-color: #F0FFFF;
+  //background-color: #E5F3FF;
   height: 100vh;
 }
 
@@ -33,8 +33,7 @@
 }
 
 .group_day {
-  background-color: #F0FFFF;
-  //background-color: #FFFFF0;
+  //background-color: #E5F3FF;
 }
 
 .smallgroup {
@@ -49,7 +48,7 @@
 .group_info {
   width: 100%;
   border-radius: 10px;
-  background-color: #E4FFFF;
+  //background-color: #F1FFFF;
   margin-bottom: 10px;
 }
 
@@ -58,7 +57,7 @@
 }
 
 .info {
-  background-color: #D0FFFF;
+  //background-color: #E5F3FF;
   border-radius: 5px;
   padding: 5px;
 }
@@ -83,4 +82,9 @@
 
 .signup_form .form-group {
   margin-bottom: 25px !important;
+}
+
+.leader_thumbnail {
+  max-height: 140px;
+}
 }

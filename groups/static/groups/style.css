@@ -17,7 +17,7 @@
 }
 
 .welcome {
-  margin-top: 30vh;
+  margin-top: 28vh;
 }
 
 .grouptypes {
@@ -92,3 +92,12 @@
 .thumbnail {
   //max-width: 165px;
 }
+
+.group_day_title {
+  border-top: 1px solid #ccc;
+}
+
+td {
+  vertical-align: top;
+}
+

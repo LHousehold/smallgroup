@@ -86,5 +86,9 @@
 
 .leader_thumbnail {
   max-height: 140px;
+  max-width: 160px;
 }
+
+.thumbnail {
+  //max-width: 165px;
 }

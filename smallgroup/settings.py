@@ -51,7 +51,7 @@ TEMPLATES = [
     },
 ]
 
-ALLOWED_HOSTS = ["72.53.91.231",'localhost','192.168.0.111']
+ALLOWED_HOSTS = ["72.53.91.231",'localhost','192.168.0.106']
 
 
 # Application definition
@@ -109,11 +109,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
-STATIC_ROOT = '/var/www/centralsmallgroups.com/static/'
+#STATIC_ROOT = '/home/lhousehold/smallgroup/static/'
 
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = '/home/luke/Documents/smallgroup/smallgroup/media/'
+MEDIA_ROOT = '/home/lhousehold/smallgroup/media/'
 
 MEDIA_URL = '/media/'
 

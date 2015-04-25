@@ -16,8 +16,13 @@
   height: 100vh;
 }
 
-.welcome {
-  margin-top: 28vh;
+.logo {
+  margin-top: 25vh;
+  text-align: center;
+}
+
+.logo > img {
+  width: 700px;
 }
 
 .grouptypes {

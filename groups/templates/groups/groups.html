@@ -59,18 +59,22 @@
               </div>
               <div class="col-md-4 col-sm-9 info">
                 <table>
-                  <tr><td>Type</td><td>{{ group.group_type }}</td></tr>
+                  {% if group.style %}
+                  <tr><td>Type</td><td>{{ group.style }}</td></tr>
+                  {% endif %}
+                  <tr><td>Open to</td><td>{{ group.group_type }}</td></tr>
                   {% if group.book %}
                   <tr><td>Book</td><td>{{ group.book }}</td></tr>
                   {% endif %}
-                  {% if group.leader2 %}
-                  <tr><td>Co-Leader</td><td>{{ group.leader.name }}</td></tr>
-                  <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
-                  <tr><td>Co-Leader</td><td>{{ group.leader2.name }}</td></tr>
-                  <tr><td>Email</td><td>{{ group.leader2.email }}</td></tr>
-                  {% else %}
                   <tr><td>Leader</td><td>{{ group.leader.name }}</td></tr>
                   <tr><td>Email</td><td>{{ group.leader.email }}</td></tr>
+                  {% if group.leader2 %}
+                  <tr><td>Leader</td><td>{{ group.leader2.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader2.email }}</td></tr>
+                  {% endif %}
+                  {% if group.leader3 %}
+                  <tr><td>Leader</td><td>{{ group.leader3.name }}</td></tr>
+                  <tr><td>Email</td><td>{{ group.leader3.email }}</td></tr>
                   {% endif %}
                   <tr><td>Time</td><td>{{ group.time }}</td></tr>
                   {% if group.location %}

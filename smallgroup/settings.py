@@ -22,9 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '9u)hei3uc3gmkem%+*^dfwnoi7@$0dopl4i-6l8o+_8pomd=s5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
@@ -51,7 +51,7 @@ TEMPLATES = [
     },
 ]
 
-ALLOWED_HOSTS = ["72.53.91.231",'localhost','192.168.0.106']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -118,8 +118,8 @@ MEDIA_ROOT = '/home/lhousehold/smallgroup/media/'
 MEDIA_URL = '/media/'
 
 
+EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'connect.central.ctf@gmail.com'
-EMAIL_HOST_PASSWORD = '89bathurst'
+EMAIL_HOST_PASSWORD = '819bathurst'
 EMAIL_PORT = 587
-EMAIL_USE_TLS = True

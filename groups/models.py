@@ -21,8 +21,11 @@ class Group(models.Model):
   leader = models.ForeignKey(Leader, related_name="leader_%(class)s_related")
   leader2 = models.ForeignKey(Leader, blank="True", null="True",
   related_name="leader2_%(class)s_related")
+  leader3 = models.ForeignKey(Leader, blank="True", null="True",
+  related_name="leader3_%(class)s_related")
   coordinator = models.CharField(max_length=64, blank="True", null="True")
   name = models.CharField(max_length=64, default="")
+  group_style = models.CharField(max_length=32, blank="True", null="True")
   group_type = models.CharField(max_length=8, choices=group_types, default="Men")
   picture = models.ImageField(upload_to="images/", default="images/empty_room.jpg")
   location = models.CharField(max_length="32", null="True", blank="True")

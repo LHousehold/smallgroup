@@ -61,8 +61,8 @@ def contact(request):
   phone = request.GET.get('phone','c')
 
   leader_topic = "Smallgroup Signup from " + name
-  #leader_emails = ['luke.household@gmail.com']
-  leader_emails = ['zibak@catchthefire.com','szijl@catchthefire.com']
+  leader_emails = ['luke.household@gmail.com']
+  #leader_emails = ['zibak@catchthefire.com']
   #leader_emails = []
   #leader_emails.append(group.leader.email)
   #if group.leader2:
@@ -95,7 +95,7 @@ def contact(request):
 
   Thank you so much for signing up for a Central Small Group! We are excited that you want to be part of our community!
   The Small Group Leader of your group will be in touch with you to give you more details on when the group meets, what it will be about and what you need to bring.
-  If your Small Group leader hasn't reached out to you within 5 days, please let us know by emailing our Pastoral Intern Ziba Kanagasabapathy at zibak@catchthefire.com.
+  If your Small Group leader hasn't reached out to you within 5 days, please let us know by emailing our Pastoral Intern Ziba Kanagasabapathy at <a href="zibak@catchthefire.com">zibak@catchthefire.com</a>.
 
   Looking forward to see you at Central!
 
